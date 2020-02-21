@@ -1,0 +1,49 @@
+{% extends "commanhead.html" %}
+{% load static %}
+<head>
+    <style>
+        th{height:50px}
+    </style>
+</head>
+
+{%  block mc %}
+    {% include 'menu comman.html' %}
+    <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table align="center" border="0" width="30%" style="background-image: url('{% static "images/uu11.jpg"%}');width: 404px;height: 250px;">
+    <tr>
+        <th colspan="2">
+            <h2>Uplo@d  your f@vour@te $ong$</h2>
+        </th>
+    </tr>
+
+<tr><th >
+    moviename
+      </th>
+<th> {{ data.moviename}}</th>
+</tr>
+
+    <tr><th >
+    song
+      </th>
+<th> {{ data.song}}</th>
+{#        <th>{{ data.song.errors }}</th>#}
+</tr>
+    <tr>
+        <th colspan="2">
+           <button type="submit" class="btn btn-secondary">upload</button>
+        </th>
+    </tr>
+        <tr>
+            <th  style="float:right"colspan="2"><a href="{% url 'musichome' %}">previous</a></th>
+    </tr>
+{% for x in messages %}
+    <tr>
+    <th colspan="2" style="color: red">
+       <h2> {{ x }} </h2>
+    </th>
+    </tr>
+        {% endfor %}
+    </table>
+    </form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "commanhead.html" %}
+{% load static %}
+{% block mc %}
+    {% include 'menu comman.html' %}
+    <table align="center" border="0" width="30%" style="background-image: url('{% static "images/v234.webp"%}')";>
+    <tr>
+        <th colspan="2">
+            <h2>View @ll $ong$</h2>
+        </th>
+    </tr>
+    <tr>
+        <th>moviename</th>
+        <th>songs</th>1
+{#        <th>play</th>#}
+{#        <th>label</th>#}
+    </tr>
+    {% for x in alls %}
+        <tr>
+        <th>{{ x.moviename }}</th>
+            <th>
+                <a href="{% url 'playsong' %}?n={{ x.song.url }}"> {{ x.song.url }}</a>
+            </th>
+{#        <th><audio controls> <source src="{{ x.song.url }}" type="audio/mp3"> </audio></th>#}
+{#        <th><label>{{ x.song }}</label></th>#}
+        </tr>
+    {% endfor %}
+    <th> <a href="{% url 'musichome' %}">previous</a></th>
+    </table>
+{% endblock %}

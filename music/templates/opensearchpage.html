@@ -1,0 +1,18 @@
+{% extends 'commanhead.html' %}
+{% load static %}
+{% block mc %}
+    {% include 'menu comman.html' %}
+
+    <table align="center" border="1" width="30%" height="150px" style="background-image: url('{% static "images/mike2.jpeg"%}')";>
+{#    <tr>#}
+{#        <th>#}
+{#           #}
+{#        </th>#}
+{#    </tr>#}
+    <tr>
+        <th>
+            {% include 'serach.html' %}
+        </th>
+    </tr>
+    </table>
+{% endblock %}

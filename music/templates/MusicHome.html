@@ -1,0 +1,42 @@
+{% extends 'commanhead.html' %}
+{% load static %}
+{% block mc %}
+
+    <body>
+{#    {% include 'menu comman.html' %}#}
+<table align="center" border="0" bgcolor="#f8f8ff" width="30%" height="250px" style="background-image: url('{% static "images/h2.webp"%}');width: 400px;height:250px";>
+    <tr>
+        <th></th>
+        <th style="float: right; margin-top: 50px;margin-right: 50px">
+{#             {% include 'serach.html' %}#}
+            <a href="{% url 'searchsongs' %}">search songs </a>
+        </th>
+
+    </tr>
+    <tr>
+        <th ></th>
+        <th style="float: right; margin-top: 5px;margin-right: 50px;"> <a href="{% url 'upload' %}">upload songs </a></th>
+    </tr>
+{#<tr>#}
+{#    <th>#}
+{#        <img src="{% static 'images/play.png' %}" width="100" height="100">#}
+{#    </th>#}
+{#    <th>#}
+{#        play songs#}
+{#    </th>#}
+{#</tr>#}
+<tr>
+    <th></th>
+    <th style="float: right; margin-top: 5px;margin-right: 50px;">
+        <a href="{% url 'deletesongs' %}"> delete songs </a>
+    </th>
+</tr>
+<tr>
+    <th style="height: 50px"></th>
+    <th style="float: right; margin-top: 5px;margin-right: 50px;">
+        <a href="{% url 'viewsongs' %}" > view songs </a>
+    </th>
+</tr>
+</table>
+    </body>
+{% endblock %}

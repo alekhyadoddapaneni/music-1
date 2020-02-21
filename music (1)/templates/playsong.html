@@ -1,0 +1,8 @@
+{% extends 'commanhead.html' %}
+
+{% block mc %}
+{{ x.song }}<br>
+    <audio controls> <source src="{{ x.song.url }}" type="audio/mp3"> </audio>
+    {{ y }}
+
+{% endblock %}

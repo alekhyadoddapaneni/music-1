@@ -1,0 +1,20 @@
+{% extends 'commanhead.html' %}
+{% load static %}
+{% block mc %}
+
+    <head>
+    <style>
+        th{height: 50px}
+    </style>
+    </head>
+    <body>
+    {% include 'menu comman.html' %}
+    <table align="center" border="0" width="30%" style="background-image: url('{% static "images/speaker.png"%}');width: 404px;height: 250px;">
+<tr><th ></th></tr>
+ <tr><th style="color:red;font-family: silentreaction;"> <marquee> {{ song }} </marquee></th></tr>
+  <tr><th>  <audio controls> <source src="{{ song }}" type="audio/mp3"> </audio></th></tr>
+        <tr><th style="color:orangered; text-align: left;" > <a  href="{% url 'musichome' %}">previous</a></th></tr>
+{#    {{ y }}#}
+</table>
+    </body>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'commanhead.html' %}
+{% load static %}
+{% block mc %}
+<table align="center" border="0" bgcolor="#f8f8ff" width="30%" height="250px" style="background-image: url('{% static "images/back.png"%}')";>
+    <tr>
+        <th></th>
+        <th >
+             {% include 'serach.html' %}
+        </th>
+    </tr>
+    <tr>
+        <th style="height: 30px"></th>
+        <th> <a href="{% url 'upload' %}">upload songs </a></th>
+    </tr>
+<tr>
+    <th>
+        <img src="{% static 'images/play.png' %}" width="100" height="100">
+    </th>
+    <th>
+        play songs
+    </th>
+</tr>
+<tr>
+    <th></th>
+    <th>
+        <a href="{% url 'deletesongs' %}"> delete songs </a>
+    </th>
+</tr>
+<tr>
+    <th style="height: 40px"></th>
+    <th>
+        <a href="{% url 'viewsongs' %}" > view songs </a>
+    </th>
+</tr>
+</table>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "commanhead.html" %}
+{% load static %}
+<head>
+    <style>
+        th{height:50px}
+    </style>
+</head>
+{%  block mc %}
+    <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table align="center" border="0" width="30%" style="background-image: url('{% static "images/back.png"%}')";>
+    <tr>
+        <th colspan="2">
+            <h2>upload  your favourate songs</h2>
+        </th>
+    </tr>
+
+<tr><th width="50">
+    moviename
+      </th>
+<th> {{ data.moviename}}</th>
+</tr>
+
+    <tr><th width="80">
+    song
+      </th>
+<th> {{ data.song}}</th>
+</tr>
+    <tr>
+        <th colspan="2">
+           <button type="submit" class="btn btn-secondary">upload</button>
+        </th>
+    </tr>
+        <tr>
+            <th  style="float:right"colspan="2"><a href="{% url 'musichome' %}">previous</a></th>
+    </tr>
+{% for x in messages %}
+    <tr>
+    <th colspan="2">
+        {{ x }}
+    </th>
+    </tr>
+        {% endfor %}
+    </table>
+    </form>
+{% endblock %}

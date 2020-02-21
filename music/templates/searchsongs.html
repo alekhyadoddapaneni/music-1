@@ -1,0 +1,50 @@
+{#{% extends "commanhead.html" %}#}
+{#{% load static %}#}
+{#{% block mc %}#}
+{#    {% include 'menu comman.html' %}#}
+{#<table align="center" border="0" width="30%" style="background-image: url('{% static "images/v23.jpg"%}')";>#}
+{#<tr>#}
+{#    <th colspan="2">{% include 'serach.html' %}</th>#}
+{#</tr>#}
+{#<tr>#}
+{#    <th>moviename</th>#}
+{#    <th>song</th>#}
+{##}
+{#</tr>#}
+{##}
+{##}
+{#{% for x in songs %}#}
+{#    <tr>#}
+{#    <th>{{ x.moviename }}</th><th><a href="{% url 'playsong' %}?n={{ x.song.url }}"> {{ x.song.url }} </a></th></tr>#}
+{#    <tr>#}
+{#        {% endfor %}#}
+{#    <th> <a href="{% url 'musichome' %}">previous</a></th>#}
+{#    </tr>#}
+{#    </table>#}
+{##}
+{#{% endblock %}#}
+
+{% load static %}
+{% include 'opensearchpage.html' %}
+<table align="center" border="0" width="30%" style="background-image: url('{% static "images/v23.jpg"%}');width:410px;">
+    <tr>
+
+        <th colspan="2" width="100%" >
+
+        </th>
+    </tr>
+    <tr>
+    <th>moviename</th>
+    <th>song</th>
+
+</tr>
+
+
+{% for x in songs %}
+    <tr>
+    <th>{{ x.moviename }}</th><th><a href="{% url 'playsong' %}?n={{ x.song.url }}"> {{ x.song.url }} </a></th></tr>
+    <tr>
+        {% endfor %}
+    <th> <a href="{% url 'musichome' %}">previous</a></th>
+    </tr>
+</table>
